@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+
+  notebooks-container:
+    # image: jupyter/all-spark-notebook:2022-07-11
+    build: .
+    ports:
+      - '8889:8888'
+    volumes:
+      - ${HOST_PATH}:/home/jovyan/work
+    container_name: notebooks-container
+    
+
+# docker run --name notebooks-container -d -p 8889:8888 jupyter/all-spark-notebook
+
+
