@@ -9,6 +9,7 @@ services:
       - '8889:8888'
     volumes:
       - ${HOST_PATH}:/home/jovyan/work
+      - ${HOST_FILE_PATH}:/home/jovyan/data
     container_name: notebooks-container
     
 
