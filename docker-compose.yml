@@ -8,9 +8,11 @@ services:
     ports:
       - '8889:8888'
     volumes:
-      - ${HOST_PATH}:/home/jovyan/work
-      - ${HOST_FILE_PATH}:/home/jovyan/data
+      - ${HOST_WORK_PATH}:/home/jovyan/work
+      - ${HOST_DATA_PATH}:/home/jovyan/data
     container_name: notebooks-container
+    environment:
+      GRANT_SUDO: "yes"
     
 
 # docker run --name notebooks-container -d -p 8889:8888 jupyter/all-spark-notebook
